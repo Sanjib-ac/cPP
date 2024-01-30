@@ -23,14 +23,10 @@ void addRef(int& a , int& b, int& c)
 
 long Factorial(long); //Decalring a function. 
 void Pointer(); //Declaring function before the main method.
+void Basic();
 int main()
 {
 	std::cout << "Hello World!\n";
-	int x = 1;
-	int y = 3;
-	int z = x + y;
-
-	cout << "x= " << x <<" y= "<< y << " z=" << z;
 
 	std::cout << '\n'; // "std::" is not required- namespace
 	MyClass mc;
@@ -39,18 +35,27 @@ int main()
 	mc.changeName();
 	cout << '\n' << '\n' <<mc.name <<'\n';
 
-	addRef(x, y, z);
-
-	cout << "after Ref: ";
-	cout << "x= " << x << " y= " << y << " z=" << z<< '\n';
+	
 	long f = 5;
 	cout << "********* Facttorial ***********\n"
 		<< "Factorial of " << f << " = " <<Factorial(5) << '\n';
+
+	Basic();
 	Pointer();
 	
 	return 0;
 }
+void Basic()
+{
+	int x = 1;
+	int y = 3;
+	int z = x + y;
 
+	cout << "x= " << x << " y= " << y << " z=" << z;
+	addRef(x, y, z);
+	cout << "after Ref: ";
+	cout << "x= " << x << " y= " << y << " z=" << z << '\n';
+}
 long Factorial(long a)
 {
 	if (a > 1)
@@ -62,5 +67,9 @@ void Pointer()
 {
 	int x;
 	cout << " ****** Pointer ********\n";
-	cout << "Address of x = " << &x; //an ampersand sign (&), known as address-of operator.
+	cout << "Address of x = " << &x; //an ampersand sign (&), 
+									//known as address-of operator.
+	double * flt;
+	cout << "\nSize of memory = " << sizeof(flt)
+		<< " Address is= "<< &flt << '\n';
 }
